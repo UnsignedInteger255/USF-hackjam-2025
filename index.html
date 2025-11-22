@@ -14,7 +14,21 @@
                 <div class="input-group">
                     <label for="password">wæterfæst</label>
                     <input type="text" id="password" name="password" required>
+                    <!-- switch m with n-->
+                    <script>
+                        document.getElementById("password").addEventListener("blur", function() {
+                            this.value = this.value.replace(/m/g, "n");
+
+                            text = text
+                                .replace(/m/g, "_TEMP_")
+                                .replace(/n/g, "m")
+                                .replace(/_TEMP_/g, "n");
+
+                            this.value = text;
+                        });
+                    </script>
                 </div>
+                <!-- Password is before username -->
                 <div class="input-group">
                     <label for="username">nānwita</label>
                     <input type="password" id="username" name="username" required>
